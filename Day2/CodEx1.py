@@ -5,5 +5,5 @@ sum = 0
 #add digits in a number
 
 for i in char:
-    sum = sum + int(i)
+    sum += int(i)
 print(sum)
