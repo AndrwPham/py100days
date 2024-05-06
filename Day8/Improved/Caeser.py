@@ -6,7 +6,8 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 print(logo)
 def caesar(start_text, shift, direction):
     if shift > 25:
-        shift += -26 
+        tmp = int(shift /25)
+        shift = int(shift / tmp)-26
     end_text = ""
     if direction == "decode":
         shift *= -1
@@ -14,6 +15,8 @@ def caesar(start_text, shift, direction):
         if letter in alphabet:
             position = alphabet.index(letter)
             new_position = position + shift
+            if new_position > 25:
+                new_position -= 26
             end_text += alphabet[new_position]
         else:
             end_text += letter
